@@ -41,5 +41,5 @@ jobs: # Son serie de pasos que queremos que ejecute el programa
         run: |
           echo "Evento: ${{toJSON(github.event)}}"
           echo "Github actor: $GITHUB_ACTOR"
-          ECHO "Github repository: $GITHUB_REPOSITORY"
+          echo "Github repository: $GITHUB_REPOSITORY"
 
