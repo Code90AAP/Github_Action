@@ -31,6 +31,7 @@ jobs: # Son serie de pasos que queremos que ejecute el programa
       - name: "Mostrar mensaje"
         run: echo "Hola mundo"
       - name: "Mostrando variables de entorno"
+        if: ${{env.urs == 'anderson1'}}
         run: |
           echo "Usuario: ${{env.urs}}"
           echo "Password: ${{env.pw}}" 
