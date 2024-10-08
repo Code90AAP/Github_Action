@@ -18,6 +18,10 @@ on: # Decimos en que evento se van a ejecutar las tareas
 jobs: # Son serie de pasos que queremos que ejecute el programa
   # This workflow contains a single job called "build"
   build:
+    env: # Variables de entorno
+      urs: anderson
+      pw: hola90
+      port: 8080
     # The type of runner that the job will run on
     runs-on: ubuntu-latest # Corre una maquina de ubuntu
 
@@ -26,3 +30,9 @@ jobs: # Son serie de pasos que queremos que ejecute el programa
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: "Mostrar mensaje"
         run: echo "Hola mundo"
+      - name: "Mostrando variables de entorno"
+        run: |
+          echo "Usuario: ${{env.urs}}"
+          echo "Password: ${{env.pw}}" 
+          echo "Puerto: ${{env.port}}"
+
