@@ -30,10 +30,14 @@ jobs: # Son serie de pasos que queremos que ejecute el programa
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: "Mostrar mensaje"
         run: echo "Hola mundo"
+
       - name: "Mostrando variables de entorno"
         if: ${{env.urs == 'anderson1'}}
         run: |
           echo "Usuario: ${{env.urs}}"
           echo "Password: ${{env.pw}}" 
           echo "Puerto: ${{env.port}}"
+      - name: "Mostrando variables por defecto"
+        run: |
+          echo "Evento: ${{toJSON(github.event)}}"
 
