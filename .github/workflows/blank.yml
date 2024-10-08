@@ -41,11 +41,16 @@ jobs: # Son serie de pasos que queremos que ejecute el programa
           echo "Usuario: ${{env.urs}}"
           echo "Password: ${{env.pw}}" 
           echo "Puerto: ${{env.port}}"
+
+          echo "USERNAME: ${{env.username}}"
+          echo "USERPW": ${{env.userpw}}"
+
+          echo "Project version: ${{vars.PROJECT_VERSION}}"
+
       - name: "Mostrano valores solo si el usuario es correcto"
         if: ${{env.username != '' && env.userpw != ''}}
         run: |
-          echo "USERNAME: ${{env.username}}"
-          echo "USERPW": ${{env.userpw}}"
+          echo "Si exite usuario y contraseña"
       - name: "Mostrando variables por defecto"
         run: |
           echo "Evento: ${{toJSON(github.event)}}"
